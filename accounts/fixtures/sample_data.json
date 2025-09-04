@@ -1,0 +1,58 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "username": "student1",
+      "password": "pbkdf2_sha256$600000$u1Z9EJzHb3XQ$ezR6LUj0qco0svx7Fm1iQu3SRLJ3fxP+7C9Kq/97A/g=",
+      "is_staff": false,
+      "is_active": true,
+      "email": "student1@example.com"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "username": "instructor1",
+      "password": "pbkdf2_sha256$600000$u1Z9EJzHb3XQ$ezR6LUj0qco0svx7Fm1iQu3SRLJ3fxP+7C9Kq/97A/g=",
+      "is_staff": true,
+      "is_active": true,
+      "email": "instructor1@example.com"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "progress": "Completed 2 lessons"
+    }
+  },
+  {
+    "model": "accounts.instructorprofile",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "bio": "Expert Django Instructor"
+    }
+  },
+  {
+    "model": "accounts.course",
+    "pk": 1,
+    "fields": {
+      "title": "Django Basics",
+      "description": "Learn Django fundamentals.",
+      "instructor": 1
+    }
+  },
+  {
+    "model": "accounts.course",
+    "pk": 2,
+    "fields": {
+      "title": "Advanced Django",
+      "description": "Deep dive into Django advanced features.",
+      "instructor": 1
+    }
+  }
+]

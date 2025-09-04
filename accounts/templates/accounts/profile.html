@@ -1,0 +1,33 @@
+{% extends "accounts/base.html" %}
+{% block content %}
+<h2>Profile</h2>
+<p>Welcome, {{ user.username }}!</p>
+
+{% if student %}
+    <h3>Student Profile</h3>
+    <p>Progress: {{ student.progress|default:"No progress yet." }}</p>
+    <h4>Enrolled Courses:</h4>
+    <ul>
+        {% for enrollment in enrollments %}
+            <li>{{ enrollment.course.title }}</li>
+        {% empty %}
+            <li>No courses enrolled yet.</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if instructor %}
+    <h3>Instructor Profile</h3>
+    <p>Bio: {{ instructor.bio|default:"No bio yet." }}</p>
+    <h4>Your Courses:</h4>
+    <ul>
+        {% for course in courses %}
+            <li>{{ course.title }}</li>
+        {% empty %}
+            <li>You haven’t created any courses yet.</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<a href="{% url 'course_list' %}">View All Courses</a>
+{% endblock %}
